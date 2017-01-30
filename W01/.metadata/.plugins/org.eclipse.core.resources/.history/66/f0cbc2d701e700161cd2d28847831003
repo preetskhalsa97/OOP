@@ -1,0 +1,11 @@
+import java.lang.*;
+public class Try {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=Math.pow(10, 3); 
+		System.out.println(x); 
+
+	}
+
+}
