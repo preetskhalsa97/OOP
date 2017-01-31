@@ -4,7 +4,7 @@ public class Customer {
 	private String idNo;
 	private double balance;
 	private Item iTem;
-	Customer(String name,String idNo,double balance){
+	public Customer(String name,String idNo,double balance){
 		this.name=name;
 		this.idNo=idNo;
 		this.balance=balance;
@@ -44,15 +44,5 @@ public class Customer {
 			System.out.println("Current Balance="+this.balance);
 			System.out.println(" Name of item= "+this.iTem.getName()+" id= "+this.iTem.getId()+" updated quantity= "+this.iTem.getQuantity()+" Price= "+this.iTem.getPrice());
 		}		
-	}
-}
-
-
-class TestStore {
-
-	public static void main(String[] args) {
-		
-		cust1=new Customer("Preet","1234",1000.0);
-		//ERROR: cust1 cannot be resolved to a variable?! 
 	}
 }

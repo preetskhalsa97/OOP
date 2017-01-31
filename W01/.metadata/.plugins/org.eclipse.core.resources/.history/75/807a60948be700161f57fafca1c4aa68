@@ -4,7 +4,7 @@ public class Customer {
 	private String idNo;
 	private double balance;
 	private Item iTem;
-	Customer(String name,String idNo,double balance){
+	public Customer(String name,String idNo,double balance){
 		this.name=name;
 		this.idNo=idNo;
 		this.balance=balance;
@@ -48,11 +48,14 @@ public class Customer {
 }
 
 
-class TestStore {
+public class TestStore {
 
 	public static void main(String[] args) {
 		
-		cust1=new Customer("Preet","1234",1000.0);
-		//ERROR: cust1 cannot be resolved to a variable?! 
+		cust1=new Customer();
+		
+
 	}
+
 }
+
