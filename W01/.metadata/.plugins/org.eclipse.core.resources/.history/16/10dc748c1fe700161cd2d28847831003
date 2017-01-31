@@ -1,0 +1,52 @@
+
+public class Item {
+	private String itemName;
+	private String itemidNo;
+	private int itemQuantity;
+	private double itemPrice;
+	//Constructors
+	Item(String name,String no,int q,double p){
+		this.itemName=name; 
+		this.itemidNo=no; 
+		this.itemQuantity=q;
+		this.itemPrice=p; 
+	}
+	Item(String name,String no,int q){
+		this.itemName=name; 
+		this.itemidNo=no; 
+		this.itemQuantity=q;
+		this.itemPrice=500;
+	}	
+	Item(String name,String no){
+		this.itemName=name; 
+		this.itemidNo=no;
+		this.itemQuantity=1;
+		this.itemPrice=500; 
+	}
+	//Accessor Methods 
+	public void getName(){
+		System.out.println("Name = "+this.itemName);
+	}
+	public void getId(){
+		System.out.println("ID = "+this.itemidNo);
+	}
+	public void getQuantity(){
+		System.out.println("Quantity = "+this.itemQuantity);
+	}
+	public void getPrice(){
+		System.out.println("Price = "+this.itemPrice);
+	}
+	//Mutator Methods 
+	public void setName(String name){
+		this.itemName=name; 
+	}
+	public void setId(String id){
+		this.itemidNo=id; 
+	}
+	public void setQuantity(int q){
+		this.itemQuantity=q;
+	}
+	public void setPrice(double p){
+		this.itemPrice=p; 
+	}
+}

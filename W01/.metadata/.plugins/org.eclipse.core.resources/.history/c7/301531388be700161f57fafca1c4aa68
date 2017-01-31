@@ -1,0 +1,11 @@
+
+public class TestStore {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		cust1=new Customer("Preet","1234",1000.0);
+		
+
+	}
+
+}

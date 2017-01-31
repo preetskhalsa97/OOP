@@ -1,0 +1,8 @@
+
+public class Customer {
+	private String name;
+	private String idNo;
+	private double balance;
+	private Item item;
+	
+}

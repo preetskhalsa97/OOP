@@ -1,0 +1,48 @@
+
+public class Customer {
+	private String name;
+	private String idNo;
+	private double balance;
+	private Item item;
+	Customer(String name,String idNo,double balance){
+		this.name=name;
+		this.idNo=idNo;
+		this.balance=balance;
+	}
+	Customer(String name,String idNo){
+		this.name=name;
+		this.idNo=idNo;
+		this.balance=5000;
+	}
+	public String getName(){
+		return (this.name);
+	}
+	public String getId(){
+		return (this.idNo);
+	}
+	public double getBalance(){
+		return (this.balance); 
+	}
+	public void setName(String name){
+		this.name=name; 
+	}
+	public void setId(String id){
+		this.idNo=id; 
+	}
+	
+	public void buyItem(Item item){
+		if (this.balance<item.getPrice()){
+			System.out.println("Insufficient Balance");
+		}
+		else if (item.getQuantity()<1){
+			System.out.println("Invalid Order");
+		}
+		else{
+			this.balance-=item.getPrice(); 
+			item.setQuantity(item.getQuantity()-1);	
+			System.out.println("Current Balance="+this.balance);
+			System.out.println(" Name of item= "+item.getName()+" id= "+item.getId()+" updated quantity= "+item.getQuantity()+" Price= "+item.getPrice());
+		}
+		
+	}
+}

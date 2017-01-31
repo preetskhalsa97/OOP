@@ -1,0 +1,25 @@
+
+public class Item {
+	private String itemName;
+	private String itemidNo;
+	private int itemQuantity;
+	private double itemPrice;
+	Item(String name,String no,int q,double p){
+		this.itemName=name; 
+		this.itemidNo=no; 
+		this.itemQuantity=q;
+		this.itemPrice=p; 
+	}
+	Item(String name,String no,int q,double p){
+		this.itemName=name; 
+		this.itemidNo=no; 
+		this.itemQuantity=q;
+		this.itemPrice=500;
+	}	
+	Item(String name,String no,int q,double p){
+		this.itemName=name; 
+		this.itemidNo=no; 
+		this.itemQuantity=1;
+		this.itemPrice=500; 
+	}
+}
