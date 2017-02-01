@@ -46,13 +46,3 @@ public class Customer {
 		}		
 	}
 }
-
-
-class TestStore {
-
-	public static void main(String[] args) {
-		
-		cust1=new Customer("Preet","1234",1000.0);
-		//ERROR: cust1 cannot be resolved to a variable?! 
-	}
-}

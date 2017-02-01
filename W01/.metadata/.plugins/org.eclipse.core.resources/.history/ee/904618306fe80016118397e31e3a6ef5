@@ -1,0 +1,6 @@
+
+public class TestScore {
+	public static void main(String[] args){
+		Customer cust1=new Customer("Preet","1234",1000.0);
+	}
+}
