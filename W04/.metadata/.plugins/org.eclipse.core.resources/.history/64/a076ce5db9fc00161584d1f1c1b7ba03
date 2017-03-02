@@ -1,0 +1,53 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Test {
+	static Student readStudent() throws IOException{
+		// taking input
+		Scanner in = new Scanner(System.in);
+		System.out.println("age");
+		int age= in.nextInt(); 
+		System.out.println("first name");
+		String fname=in.next();
+		System.out.println("middle name");
+		String mname=in.next();
+		System.out.println("last name");
+		String lname=in.next();
+		System.out.print("1==>, 2==>;");
+		int sepInt=in.nextInt(); 
+		in.close();
+		//System.out.println("here");
+		Name name;  
+		char sep; 
+		
+		if (sepInt==1){
+			sep=',';
+		}
+		else{
+			sep=';'; 
+		}
+		
+		if (sep==','){
+			name = new Name(fname+sep+mname+sep+lname); 
+		}
+		else{
+			name = new Name(fname+sep+mname+sep+lname); 
+		}
+		
+		System.out.println("here");
+		return new Student(name,age); 
+		
+	}
+	
+	public static void main(String[] args) throws IOException{
+		for (int i=0;i<10;i++){
+			Student s= Test.readStudent();
+			StudentList.addStudent(s);
+			
+			
+		}
+	}
+	
+	
+
+}
