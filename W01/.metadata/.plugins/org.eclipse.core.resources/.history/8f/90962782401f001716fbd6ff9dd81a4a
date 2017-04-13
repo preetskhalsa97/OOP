@@ -1,0 +1,6 @@
+// defining thread class by extending Thread
+public class MyThread extends Thread{
+	public void run(){
+		//logic 
+	}
+}

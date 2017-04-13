@@ -1,0 +1,9 @@
+
+public class ThreadA {
+
+	public static void main(String[] Args){
+		Thread b = new ThreadB();
+		b.start();
+		
+	}
+}

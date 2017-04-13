@@ -1,0 +1,12 @@
+
+public class ThreadA {
+
+	public static void main(String[] Args){
+		ThreadB b = new ThreadB();
+		b.start();
+		System.out.println(b.total);
+		// now, main thread is expecting updation, child thread has to perform updation
+		
+		
+	}
+}

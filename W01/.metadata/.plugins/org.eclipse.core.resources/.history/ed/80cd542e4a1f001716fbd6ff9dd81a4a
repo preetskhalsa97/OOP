@@ -1,0 +1,11 @@
+
+public class ThreadDemo {
+
+	public static void main(String[] Args){
+		// main thread
+		// thread instantiation 
+		MyThread t= new MyThread();
+		t.start(); 
+		}
+	}
+

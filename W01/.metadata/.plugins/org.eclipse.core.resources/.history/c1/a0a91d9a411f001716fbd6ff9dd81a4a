@@ -1,0 +1,13 @@
+
+public class ThreadDemo {
+
+	public static void main(String[] Args){
+		// main thread
+		// thread instantiation 
+		MyThread t = new MyThread(); //main thread creating a child thread object
+		t.run(); //starting the child thread ==> now, two threads are running
+		for (int j=0;j<10;j++){
+			System.out.println("Main Thread");
+		}
+	}
+}

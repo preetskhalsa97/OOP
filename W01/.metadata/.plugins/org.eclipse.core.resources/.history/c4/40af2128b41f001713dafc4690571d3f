@@ -1,0 +1,12 @@
+
+public class SyncDemoTest {
+
+	public static void main(String[] args) {
+		Display d= new Display(); 
+		MyThreadSync t1 = new MyThreadSync(d,"Dhoni");
+		t1.start();
+		
+
+	}
+
+}

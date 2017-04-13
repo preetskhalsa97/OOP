@@ -1,0 +1,10 @@
+
+public class ThreadDemo {
+
+	public static void main(String[] Args){
+		// main thread
+		// thread instantiation 
+		MyThread t = new MyThread(); //main thread creating a child thread object
+		t.start(); //starting the child thread 		
+	}
+}
