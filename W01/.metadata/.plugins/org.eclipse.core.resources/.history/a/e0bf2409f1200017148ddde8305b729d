@@ -1,0 +1,50 @@
+import javax.swing.JFrame;
+
+public class RightThread extends Thread{
+	CircleIcon c;
+	int x;
+	double r; 
+	JFrame f; 
+	
+	RightThread(JFrame f,CircleIcon c,int x,double r){
+		this.c=c;
+		this.x=x;
+		this.r=r;  
+		this.f=f;
+	}
+	
+	public void run(){
+		synchronized (c){
+			System.out.println("inside sync");
+			while (true){
+				
+				if (x+r+1<=600){
+					x+=1;
+					//System.out.println(x);
+					c.setX(x);
+					f.repaint(); 
+					System.out.println("repainted");
+					try {
+						c.wait(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} 
+				}
+				
+				else{
+					c.notifyAll();
+					try {
+						c.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}  
+				}
+			} 
+			
+			
+		}
+	}
+
+}

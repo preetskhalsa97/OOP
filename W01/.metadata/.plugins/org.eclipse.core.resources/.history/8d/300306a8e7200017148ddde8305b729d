@@ -1,0 +1,19 @@
+
+public class LeftThread extends Thread{
+
+	int x;
+	double r; 
+	CircleIcon c; 
+	
+	LeftThread(CircleIcon c,int initialX,double initialR)
+	{
+		this.c=c;
+		this.x=initialX; 
+		this.r=initialR; 
+	}{
+	
+	while (x>=0){
+		
+		
+	}
+}{}}

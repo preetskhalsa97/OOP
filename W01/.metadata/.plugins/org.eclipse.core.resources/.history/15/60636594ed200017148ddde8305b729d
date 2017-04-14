@@ -1,0 +1,50 @@
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class RightThread {
+	CircleIcon c;
+	int x;
+	double r; 
+	final JLabel l;
+	JPanel p; 
+	
+	RightThread(JPanel p,JLabel l,CircleIcon c,int x,double r){
+		this.c=c;
+		this.x=x;
+		this.r=r;  
+		this.l=l;
+		this.p=p; 
+		l.setIcon(c);
+	}
+	
+	public void run(){
+		synchronized (c){
+			System.out.println("inside sync");
+			while (x<600-r){
+				x+=1;
+				//System.out.println(x);
+				c.setX(x);
+				//System.out.println(c.getX());
+				p.repaint(); 
+				System.out.println("repainted");
+				try {
+					Thread.sleep(10000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+			} 
+			
+			if (x==600-r){
+				c.notifyAll();
+				try {
+					c.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}  
+			}
+		}
+	}
+
+}

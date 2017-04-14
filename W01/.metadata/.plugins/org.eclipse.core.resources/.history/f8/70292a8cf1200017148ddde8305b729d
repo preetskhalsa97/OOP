@@ -1,0 +1,50 @@
+import javax.swing.JFrame;
+
+public class LeftThread extends Thread{
+
+	CircleIcon c;
+	int x;
+	JFrame f; 
+	
+	LeftThread(JFrame f,CircleIcon c,int x){
+		this.c=c;
+		this.x=x; 
+		this.f=f;
+	}
+	
+	public void run(){
+		synchronized (c){
+			System.out.println("inside sync");
+			while (true){
+				
+				if (x-1>=0){
+					x-=1;
+					//System.out.println(x);
+					c.setX(x);
+					f.repaint();
+					try {
+						c.wait(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} 
+				}
+				
+				else{
+					c.notifyAll();
+					try {
+						c.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}  
+				}
+			} 
+			
+			
+		}
+	}
+	
+	
+	
+}

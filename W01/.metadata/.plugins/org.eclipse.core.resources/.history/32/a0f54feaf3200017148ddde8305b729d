@@ -1,0 +1,43 @@
+import javax.swing.JFrame;
+
+public class ScaleUpThread extends Thread {
+
+	int max=50; 
+	CircleIcon c;
+	double r; 
+	JFrame f; 
+	int x; 
+	
+	ScaleUpThread(JFrame f, CircleIcon c, int x,  double r){
+		this.f=f;
+		this.c=c;
+		this.x=x;
+		this.r=r; 
+	}
+	
+	public void run(){
+		synchronized(c){
+			while (true){
+				if (r+1<=max && x+r+1<=600){
+					r+=1; 
+					c.setRadius(r);
+					f.repaint();
+					try {
+						c.wait(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}	
+				}
+				else{
+					c.notifyAll();
+					try {
+						c.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+				}				
+			}			
+		}		
+	}
+}

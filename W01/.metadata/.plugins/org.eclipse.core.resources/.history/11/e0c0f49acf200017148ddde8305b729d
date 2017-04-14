@@ -1,0 +1,15 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.geom.*; 
+
+public class RectComponent extends JComponent{
+
+	public void paintComponent(Graphics g){
+		Graphics2D g2 = (Graphics2d) g; 
+		Rectangle2D.Double rect = new Rectangle2D.Double(0,0,20,30); 
+		// Rectangle rect = new Rectangle(0,0,50,100)
+		g2.draw(rect);
+		g2.setColor(Color.red);
+		//g2.fill(rect) 
+	}
+}

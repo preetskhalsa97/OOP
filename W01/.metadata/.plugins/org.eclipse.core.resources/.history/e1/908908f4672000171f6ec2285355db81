@@ -1,0 +1,37 @@
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.*;
+
+// class implementing the icon
+class CircleIcon implements Icon
+{
+	private double		radius;			// radius of the circle icon
+	private int			X_position;		// x-position of circle icon
+	private int			Y_position;		// y-position of circle icon
+	// Constructor Method
+	CircleIcon(double radius)
+	{
+		this.radius 		= 	radius;
+		this.X_position 	= 	590;	// current x-position is 300
+		this.Y_position 	= 	290;		// current y-position is 0
+	}
+
+	// Methods for getting icon height and width
+	public int getIconWidth()			{	return (int)radius;   	}
+	public int getIconHeight()			{	return (int)radius;   	}
+
+	// Method for painting icon
+	public void paintIcon(Component C,Graphics g, int x,int y)
+	{
+	Graphics2D g2 = (Graphics2D)g;
+	Ellipse2D.Double circle = new Ellipse2D.Double(x+X_position,y+Y_position,radius,radius);
+	g2.draw(circle);
+	g2.setColor(Color.red);
+	g2.fill(circle);
+	}
+
+	//    ADD ANY OTHER METHOD(s) THAT YOU THINK IS/ARE REQUIRED FOR THIS PROBLEM. DO NOT REMOVE
+	//    THESE COMMENTS JUST WRITE YOUR CODE AFTER THESE COMMENTS
+
+}// End of class CircleIcon

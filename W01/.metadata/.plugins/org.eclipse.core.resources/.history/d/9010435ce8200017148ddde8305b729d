@@ -1,0 +1,28 @@
+
+public class RightThread {
+	CircleIcon c;
+	int x;
+	double r; 
+	
+	RightThread(CircleIcon c,int x,double r){
+		this.c=c;
+		this.x=x;
+		this.r=r;  
+	}
+	
+	public void run(){
+		synchronized (c){
+			while (x<=600-r){
+				x+=1;
+				c.setX(x);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+			}
+		}
+	}
+
+}

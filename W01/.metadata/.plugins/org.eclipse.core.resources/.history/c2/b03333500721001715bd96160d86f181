@@ -1,0 +1,43 @@
+import javax.swing.JFrame;
+
+public class ScaleDownThread extends Thread{
+	
+	int min=5;
+	CircleIcon c;
+	double r; 
+	JFrame f; 
+	ScaleDownThread(JFrame f,CircleIcon c, double r){
+		this.c=c; 
+		this.r=r; 
+		this.f=f; 
+	}
+	
+	public void run(){
+		while (true){
+			synchronized(c){
+				if (r-1>=min){
+					r-=1.0;
+					c.setRadius(r);
+					f.repaint();
+					try {
+						c.wait(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}					
+				}
+				else{
+					c.notifyAll();
+					try {
+						c.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}  
+				}
+			}
+		}
+	}
+	
+
+}

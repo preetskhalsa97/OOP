@@ -1,0 +1,16 @@
+import javax.swing.JFrame;
+
+public class LeftThread extends Thread{
+	
+	CircleIcon c; 
+	JFrame f; 
+	
+	LeftThread(CircleIcon c,JFrame f){
+		this.c=c; 
+		this.f=f; 
+	}
+	
+	
+	
+
+}
