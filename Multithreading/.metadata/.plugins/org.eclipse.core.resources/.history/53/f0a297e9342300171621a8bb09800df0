@@ -1,0 +1,49 @@
+import java.awt.Frame;
+import java.util.Random;
+
+import javax.swing.JTextField;
+
+public class RandomThread extends Thread{
+	JTextField t1;
+	JTextField t2;
+	JTextField t3;
+	Frame f; 
+	private boolean suspendFlag=false; 
+	
+	RandomThread(JTextField t1,JTextField t2,JTextField t3,Frame f){
+		this.t1=t1; 
+		this.t2=t2;
+		this.t3=t3;
+		this.f=f; 
+	}
+	
+	public void myResume(){
+		suspendFlag=false; 
+	}
+	
+	public synchronized void mySuspend(){
+		suspendFlag=true; 
+		notify(); 
+	}
+	
+	public synchronized void run(){
+		
+		
+			try{
+				while (suspendFlag){
+					wait(); 
+				}
+				while (true){
+					t1.setText(new Random(20).nextInt(20) + "");
+					t2.setText(new Random(20).nextInt(20) + "");
+					t3.setText(new Random(20).nextInt(20) + "");
+					
+					Thread.sleep(100);
+				}
+				
+			}catch (InterruptedException ex){}
+		
+		
+	}
+
+}

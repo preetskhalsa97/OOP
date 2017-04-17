@@ -1,0 +1,15 @@
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class ComputeThread {
+
+	JLabel[] resultLabels; 
+	JLabel l1; 
+	JLabel l2;
+	JLabel l3;
+	JLabel lTotal;
+	
+	
+	
+	
+}

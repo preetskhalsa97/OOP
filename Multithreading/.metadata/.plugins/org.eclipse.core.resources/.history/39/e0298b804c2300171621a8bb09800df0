@@ -1,0 +1,22 @@
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class ComputeThread {
+
+	JLabel[] resultLabels; 
+	JLabel l; 
+	JLabel lTotal;
+	QuadraticEquationQueue q; 
+	
+	ComputeThread(QuadraticEquationQueue q,JLabel[] resultLabels, JLabel lTotal,JLabel l){
+		this.q=q;
+		this.resultLabels=resultLabels;
+		this.lTotal=lTotal; 
+		this.l=l;		
+	}
+	
+	
+	
+	
+	
+}

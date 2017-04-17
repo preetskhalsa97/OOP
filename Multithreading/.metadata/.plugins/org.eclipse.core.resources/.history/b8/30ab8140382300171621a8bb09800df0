@@ -1,0 +1,57 @@
+import java.util.Random;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class CreateThread extends Thread{
+	
+	JTextField t1;
+	JTextField t2;
+	JTextField t3;
+	JLabel l; 
+	JFrame f; 
+	private int a;
+	private int b; 
+	private int c;
+	private boolean suspendFlag = false; 
+	
+	CreateThread(JTextField t1,JTextField t2,JTextField t3,JLabel l, JFrame f){
+		this.t1=t1; 
+		this.t2=t2;
+		this.t3=t3;
+		this.l=l; 
+		this.f=f; 
+	}
+	
+	public void myResume(){
+		suspendFlag=false; 
+	}
+	
+	public synchronized void mySuspend(){
+		suspendFlag=true; 
+		notify(); 
+	}
+	
+	public void run(){
+		
+		try{
+			
+			while (suspendFlag){
+				
+				wait(); 
+			}
+			while (true){
+				
+				a = Integer.parseInt(t1.getText()); 
+				
+			}
+			
+		}catch (InterruptedException ex){}
+		
+	}
+	
+	
+	
+
+}

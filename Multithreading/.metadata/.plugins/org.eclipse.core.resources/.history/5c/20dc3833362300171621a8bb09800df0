@@ -1,0 +1,42 @@
+import java.util.Random;
+
+import javax.swing.JLabel;
+
+public class CreateThread extends Thread{
+	
+	private JLabel l1;
+	private JLabel l2;
+	private JLabel l3;
+	private boolean suspendFlag;
+
+	CreateThread(JLabel l1,JLabel l2,JLabel l3){
+		this.l1=l1;
+		this.l2=l2;
+		this.l3=l3;
+	}
+	
+	public void mysuspend(){
+		suspendFlag=true;
+	}
+	
+	public synchronized void myresume(){
+		suspendFlag=false; 
+		notify(); 
+	}
+	
+	public void run() throws InterruptedException{
+		while (true){
+			while (suspendFlag){
+				wait(); 
+			}
+			synchronized(this){
+				l1.setText(new Random(20)+"");
+				l2.setText(new Random(20)+"");
+				l3.setText(new Random(20)+"");
+			}
+			Thread.sleep(100);
+		}
+	}
+	
+
+}

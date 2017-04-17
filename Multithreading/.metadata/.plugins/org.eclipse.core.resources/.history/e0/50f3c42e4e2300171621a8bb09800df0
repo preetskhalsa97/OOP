@@ -1,0 +1,45 @@
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class ComputeThread extends Thread{
+
+	int count;//number of equations solved 
+	JLabel[] resultLabels; 
+	JLabel l; 
+	JLabel lTotal;
+	QuadraticEquationQueue q; 
+	
+	private boolean suspendFlag = false; 
+	
+	ComputeThread(QuadraticEquationQueue q,JLabel[] resultLabels, JLabel lTotal,JLabel l){
+		this.q=q;
+		this.resultLabels=resultLabels;
+		this.lTotal=lTotal; 
+		this.l=l;		
+	}
+	
+	public void myResume(){
+		suspendFlag=false; 
+	}
+	
+	public synchronized void mySuspend(){
+		suspendFlag=true; 
+		notify(); 
+	}
+	
+	public void run(){
+		while (true){
+			try{
+				
+				
+			}catch (InterruptedException ex){}
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+}
