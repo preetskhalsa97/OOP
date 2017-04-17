@@ -53,16 +53,16 @@ public class CreateThread extends Thread{
 				String str2 = RandomThread.t2.getText();
 				String str3 = RandomThread.t3.getText();
 				
-				if (str1==""||str2==""||str3==""||str1==null||str2==null||str3==null){
+				if (str1==""||str2==""||str3==""){
 					// do nothing
 					 
 				}
 				
-				else{
+				if (str1!=""&&str2!=""&&str3!=""){
 					System.out.println(str1);
 					System.out.println(str2);
 					System.out.println(str3);
-					a = Integer.parseInt(str1); //WHY ERROR?!!!??!! ==> CHECK STRING POINTING TO NULL!!
+					a = Integer.parseInt(str1); //WHY ERROR?!!!??!!
 					b = Integer.parseInt(str2); 
 					c = Integer.parseInt(str3); 
 					 

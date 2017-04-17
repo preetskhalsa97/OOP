@@ -22,9 +22,8 @@ public class ComputeThread extends Thread{
 		this.l=l;		
 	}
 	
-	public synchronized void myResume(){
+	public void myResume(){
 		suspendFlag=false; 
-		notifyAll();
 	}
 	
 	public synchronized void mySuspend(){
@@ -43,9 +42,7 @@ public class ComputeThread extends Thread{
 					if (q.isEmpty()){
 						empty.setForeground(Color.GREEN);
 					}
-					//TODO: solve the equation, output accordingly
-					
-					
+					//TODO: solve the equation, output accoordingly 
 					
 				}
 				

@@ -26,14 +26,13 @@ public class CreateThread extends Thread{
 		
 	}
 	
-	public synchronized void myResume(){
+	public void myResume(){
 		suspendFlag=false; 
-		notifyAll();
 	}
 	
 	public synchronized void mySuspend(){
 		suspendFlag=true; 
-		notifyAll(); 
+		notify(); 
 	}
 	
 	public void run(){
@@ -49,24 +48,24 @@ public class CreateThread extends Thread{
 			}
 			//while (true){
 			//synchronized(this){
-				String str1 = RandomThread.t1.getText(); 
-				String str2 = RandomThread.t2.getText();
-				String str3 = RandomThread.t3.getText();
+//				String str1 = RandomThread.t1.getText(); 
+//				String str2 = RandomThread.t2.getText();
+//				String str3 = RandomThread.t3.getText();
 				
-				if (str1==""||str2==""||str3==""||str1==null||str2==null||str3==null){
+				if (str1==""||str2==""||str3==""){
 					// do nothing
 					 
 				}
 				
-				else{
+				if (str1!=""&&str2!=""&&str3!=""){
 					System.out.println(str1);
 					System.out.println(str2);
 					System.out.println(str3);
-					a = Integer.parseInt(str1); //WHY ERROR?!!!??!! ==> CHECK STRING POINTING TO NULL!!
+					a = Integer.parseInt(str1); //WHY ERROR?!!!??!!
 					b = Integer.parseInt(str2); 
 					c = Integer.parseInt(str3); 
 					 
-					if (a==0){
+					if (a==0 || b==0 || c==0){
 						// do nothing 
 					}
 					

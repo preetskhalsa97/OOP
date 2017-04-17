@@ -43,9 +43,7 @@ public class ComputeThread extends Thread{
 					if (q.isEmpty()){
 						empty.setForeground(Color.GREEN);
 					}
-					//TODO: solve the equation, output accordingly
-					
-					
+					//TODO: solve the equation, output accoordingly 
 					
 				}
 				

@@ -20,9 +20,8 @@ public class RandomThread extends Thread{
 		this.f=f; 
 	}
 	
-	public synchronized void myResume(){
-		suspendFlag=false;
-		notifyAll(); 
+	public void myResume(){
+		suspendFlag=false; 
 	}
 	
 	public synchronized void mySuspend(){

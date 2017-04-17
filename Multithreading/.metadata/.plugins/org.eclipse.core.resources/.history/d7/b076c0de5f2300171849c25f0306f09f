@@ -166,7 +166,7 @@ public class OnlineMain {
 			
 			else{
 				if (createThreadRunning==false){
-					//System.out.println("Here!");
+					System.out.println("Here!");
 					createThreadRunning = true; 
 					randomThread.myResume();
 					createThread.myResume();

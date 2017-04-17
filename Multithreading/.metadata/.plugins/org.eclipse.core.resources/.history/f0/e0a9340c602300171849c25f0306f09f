@@ -62,7 +62,7 @@ public class CreateThread extends Thread{
 					System.out.println(str1);
 					System.out.println(str2);
 					System.out.println(str3);
-					a = Integer.parseInt(str1); //WHY ERROR?!!!??!! ==> CHECK STRING POINTING TO NULL!!
+					a = Integer.parseInt(str1); //WHY ERROR?!!!??!!
 					b = Integer.parseInt(str2); 
 					c = Integer.parseInt(str3); 
 					 
