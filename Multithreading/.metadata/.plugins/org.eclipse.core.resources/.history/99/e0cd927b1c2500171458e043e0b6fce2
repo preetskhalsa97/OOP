@@ -1,0 +1,14 @@
+
+public class B {
+
+	synchronized bar(A a){
+		String name = Thread.currentThread().getName(); 
+		System.out.println(name+" entered B.bar");
+		
+		try{
+			Thread.sleep(1000);
+		}catch (Exception e){
+			
+		}
+	}
+}
