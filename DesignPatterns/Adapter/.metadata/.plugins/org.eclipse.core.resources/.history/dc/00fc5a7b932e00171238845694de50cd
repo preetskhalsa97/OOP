@@ -1,0 +1,23 @@
+package com.adapter;
+
+public class AssignmentWork {
+	
+	private Pen p; 
+
+	public void writeAssignment(String str){
+		
+	}
+	
+	public Pen getPen(){
+		return p;
+	}
+	
+	public void setPen(Pen p){
+		this.p=p; 
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,17 @@
+package com.adapter;
+import com.krishna.PilotPen;
+
+public class School {
+	
+	public static void main (String[] Args){
+		
+		PilotPen pp  = new PilotPen(); //==>we have a pilot pen obj
+		// BUT we need a pen object to pass into setPen
+		
+		AssignmentWork aw = new AssignmentWork(); 
+		//aw.setPen(??); // ISSUE==> we need an object of Pen interface
+		aw.writeAssignment("tired af");
+		
+	}
+
+}

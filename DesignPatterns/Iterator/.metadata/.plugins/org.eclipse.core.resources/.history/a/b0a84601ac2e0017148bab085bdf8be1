@@ -1,0 +1,25 @@
+import java.util.Iterator;
+
+public class ShapeIterator implements Iterator<Shape>{
+
+	public  ShapeIterator(Shape[] s){
+		
+	}
+
+	@Override
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Shape next() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public void remove(){
+		
+	}
+	
+}

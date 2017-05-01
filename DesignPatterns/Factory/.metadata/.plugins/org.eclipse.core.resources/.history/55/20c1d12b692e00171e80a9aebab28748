@@ -1,0 +1,14 @@
+package com.phone;
+
+public class Shop {
+
+	public static void main (String[] Args){
+		
+		Phone p = new Phone("Android",2,"Qualcom",5.5,3100); 
+		
+		
+		
+	}
+	
+	
+}
